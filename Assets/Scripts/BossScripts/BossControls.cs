@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/BossControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/BossScripts/BossControls.inputactions'
 
 using System;
 using System.Collections;
