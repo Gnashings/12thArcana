@@ -33,9 +33,14 @@ public class HeroStats : MonoBehaviour
         if(health <= 0)
         {
             Debug.Log(timer + " TIMER");
-            LevelProgress.timePlayed += timer;
+            
             LevelProgress.levelCount++;
             SceneManager.LoadScene("Testing Scene");
         }
+    }
+
+    private void OnDisable()
+    {
+        LevelProgress.timePlayed += timer;
     }
 }
