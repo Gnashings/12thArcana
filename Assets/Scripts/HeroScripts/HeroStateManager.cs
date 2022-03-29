@@ -7,7 +7,7 @@ public class HeroStateManager : MonoBehaviour
     public AuraDetection aura;
     public HeroStats stats;
     public Rigidbody rBody;
-
+    public HeroAttacks heroAttacks;
     [HideInInspector]
     public HeroBaseState currentState;
 

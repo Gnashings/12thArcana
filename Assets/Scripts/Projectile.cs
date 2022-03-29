@@ -4,16 +4,29 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public bool isHeroProjectile;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("HeroAura"))
+        if(isHeroProjectile == false)
         {
-            other.GetComponent<AuraDetection>().CheckJumpDecision();
+            if (other.CompareTag("HeroAura"))
+            {
+                other.GetComponent<AuraDetection>().CheckJumpDecision();
+            }
+            if (other.CompareTag("Hero"))
+            {
+                other.GetComponentInParent<HeroStats>().TakeDamage(20);
+                Destroy(gameObject);
+            }
         }
-        if (other.CompareTag("Hero"))
+        else
         {
-            other.GetComponentInParent<HeroStats>().TakeDamage(20);
-            Destroy(gameObject);
+            if (other.CompareTag("Boss"))
+            {
+                other.GetComponentInParent<BossAttributes>().TakeDamage(20);
+                Destroy(gameObject);
+            }
         }
+
     }
 }

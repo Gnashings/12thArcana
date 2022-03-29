@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BossStateManager : MonoBehaviour
 {
+    public BossControls bossControls;
     public BossAttackManager bossAttacks;
 
+    public InputAction attack;
+   
     [HideInInspector]
     public BossBaseState currentState;
     public BossIdleState idleState = new BossIdleState();
     public BossAttackingState attackingState = new BossAttackingState();
 
+   
     void Start()
     {
+        bossControls = new BossControls();
         currentState = idleState;
-
+ 
         currentState.EnterState(this);
     }
 
@@ -41,5 +47,16 @@ public class BossStateManager : MonoBehaviour
     IEnumerator AttackCD()
     {
         yield return new WaitForSeconds(3);
+    }
+
+    private void OnEnable()
+    {
+        //attack = bossControls.BossInputs.Projectile;
+        attack.Enable();
+    }
+
+    private void OnDisable()
+    {
+        attack.Disable();
     }
 }

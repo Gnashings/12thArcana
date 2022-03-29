@@ -18,7 +18,7 @@ public class BossIdleState : BossBaseState
 
     public override void UpdateState(BossStateManager bossState)
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (bossState.attack.triggered)
         {
             bossState.SwitchState(bossState.attackingState);
         }

@@ -7,7 +7,7 @@ public class HeroJumpState : HeroBaseState
     public override void EnterState(HeroStateManager heroState)
     {
         heroState.rBody.AddForce(heroState.transform.up * heroState.stats.jumpHeight);
-        
+        heroState.heroAttacks.FireProjectile();
     }
 
     public override void UpdateState(HeroStateManager heroState)

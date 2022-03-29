@@ -42,7 +42,7 @@ public class @BossControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5cd22605-2d57-4855-b0d1-db5ca80bcbf2"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""BossControls"",
