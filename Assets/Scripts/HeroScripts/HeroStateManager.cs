@@ -8,10 +8,16 @@ public class HeroStateManager : MonoBehaviour
     public HeroStats stats;
     public Rigidbody rBody;
     public HeroAttacks heroAttacks;
+    public GameObject leftWaypoint;
+    public GameObject rightWaypoint;
+    public GameObject dodgeLeftWaypoint;
+    public GameObject dodgeRightWaypoint;
     [HideInInspector]
     public HeroBaseState currentState;
 
     public HeroIdleState idleState = new HeroIdleState();
+    public HeroWanderState wanderState = new HeroWanderState();
+    public HeroDodgeState dodgeState = new HeroDodgeState();
     public HeroJumpState jumpState = new HeroJumpState();
 
     void Start()
@@ -25,6 +31,10 @@ public class HeroStateManager : MonoBehaviour
     {
         currentState.UpdateState(this);
     }
+    void FixedUpdate()
+    {
+        
+    }
 
     public void SwitchState(HeroBaseState state)
     {
@@ -34,5 +44,17 @@ public class HeroStateManager : MonoBehaviour
         //set the new state
         currentState = state;
         state.EnterState(this);
+    }
+
+    public void DumpAuraMemory()
+    {
+        aura.enabled = false;
+        aura.jumpDecision = false;
+        aura.dodgeDecision = false;
+    }
+
+    public void EnableAura()
+    {
+        aura.enabled = true;
     }
 }

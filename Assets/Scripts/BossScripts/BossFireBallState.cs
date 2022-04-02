@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-public class BossAttackingState : BossBaseState
+public class BossFireBallState : BossBaseState
 {
     bool finishedAttacking;
     public override void EnterState(BossStateManager bossState)

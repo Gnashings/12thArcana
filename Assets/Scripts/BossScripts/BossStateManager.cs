@@ -13,7 +13,8 @@ public class BossStateManager : MonoBehaviour
     [HideInInspector]
     public BossBaseState currentState;
     public BossIdleState idleState = new BossIdleState();
-    public BossAttackingState attackingState = new BossAttackingState();
+    public BossPlumeAttackState plumeAttackState = new BossPlumeAttackState();
+    public BossFireBallState fireBallState = new BossFireBallState();
 
    
     void Start()

@@ -16,8 +16,7 @@ public class HeroStats : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(LevelProgress.levelCount);
-        Debug.Log(LevelProgress.timePlayed);
+        Debug.Log("Level : " + LevelProgress.levelCount);
         jumpChance += jumpChanceMod * LevelProgress.levelCount;
         health = totalHealth;
     }

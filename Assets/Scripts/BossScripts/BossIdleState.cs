@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class BossIdleState : BossBaseState
 {
-
     void Start()
     {
         
@@ -13,20 +12,18 @@ public class BossIdleState : BossBaseState
 
     public override void EnterState(BossStateManager bossState)
     {
-        //Debug.Log("IDLE STATE: ENTERING");
     }
 
     public override void UpdateState(BossStateManager bossState)
     {
         if (bossState.attack.triggered)
         {
-            bossState.SwitchState(bossState.attackingState);
+            bossState.SwitchState(bossState.plumeAttackState);
         }
     }
     
     public override void ExitState(BossStateManager bossState)
     {
-        //Debug.Log("IDLE STATE: LEAVING");
     }
 
     void Update()

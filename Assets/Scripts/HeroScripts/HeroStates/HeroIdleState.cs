@@ -2,24 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroJumpState : HeroBaseState
+public class HeroIdleState : HeroBaseState
 {
     public override void EnterState(HeroStateManager heroState)
     {
-        heroState.rBody.AddForce(heroState.transform.up * heroState.stats.jumpHeight);
-        heroState.heroAttacks.FireProjectile();
+        //testing states
+        Debug.Log("swapping to wondering state");
+        heroState.SwitchState(heroState.wanderState);   
     }
 
     public override void UpdateState(HeroStateManager heroState)
     {
-        if(heroState.rBody.IsSleeping())
+        if(heroState.aura.jumpDecision)
         {
-            heroState.SwitchState(heroState.idleState);
+
+            heroState.SwitchState(heroState.jumpState);
         }
+
     }
 
     public override void ExitState(HeroStateManager heroState)
     {
-        heroState.aura.jumpDecision = false;
     }
+
 }

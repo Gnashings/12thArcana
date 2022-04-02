@@ -8,6 +8,7 @@ TagManager:
   - HeroAura
   - Projectile
   - Boss
+  - HeroHurtbox
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,6 @@ public class HeroAttacks : MonoBehaviour
     {
         GameObject attack;
         attack = Instantiate(ProjectilePrefab, ProjectileSpawn.transform.position, transform.rotation) as GameObject;
-        attack.GetComponent<Rigidbody>().AddForce(-transform.right * projectileSpeed);
+        attack.GetComponent<Rigidbody>().AddForce(transform.right * projectileSpeed);
     }
 }

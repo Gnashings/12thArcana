@@ -5,7 +5,10 @@ using UnityEngine;
 public class AuraDetection : MonoBehaviour
 {
     public bool jumpDecision;
+    public bool dodgeDecision;
+
     private float jumpChance;
+
     void Start()
     {
         jumpChance = GetComponentInParent<HeroStats>().jumpChance;
@@ -33,6 +36,15 @@ public class AuraDetection : MonoBehaviour
         }
         else
             jumpDecision = false;
-        
+    }
+
+    public void CheckDodgeDecision()
+    {
+        if (Random.value <= jumpChance)
+        {
+            dodgeDecision = true;
+        }
+        else
+            dodgeDecision = false;
     }
 }

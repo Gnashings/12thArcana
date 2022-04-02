@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
             {
                 other.GetComponent<AuraDetection>().CheckJumpDecision();
             }
-            if (other.CompareTag("Hero"))
+            if (other.CompareTag("HeroHurtbox"))
             {
                 other.GetComponentInParent<HeroStats>().TakeDamage(20);
                 Destroy(gameObject);
