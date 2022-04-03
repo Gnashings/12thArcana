@@ -12,13 +12,29 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Plume",
+                    "type": "Button",
+                    "id": "728ca945-8e13-4f31-8f9c-6e15f4ec5cb7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Homing",
+                    "type": "Button",
+                    "id": "2647907c-83e2-4b93-8e2b-820c7c4d57b2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "ce5d4c5a-57bb-4a4a-a021-3170ebd64b25",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "BossControls",
@@ -34,6 +50,28 @@
                     "processors": "",
                     "groups": "BossControls",
                     "action": "Projectile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aac10c31-4cfd-47ef-b007-db7c1c96bb7a",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Plume",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d75408f6-cf3b-4513-8beb-21d96e0396a9",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Homing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

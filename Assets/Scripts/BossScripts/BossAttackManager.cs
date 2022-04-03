@@ -7,9 +7,14 @@ public class BossAttackManager : MonoBehaviour
     [Header("Fireball")]
     public GameObject projectileSpawn;
     public GameObject projectilePrefab;
+    public float projectileSpeed;
+
     [Header("Plume")]
     public GameObject plumePrefab;
-    public float projectileSpeed;
+
+    //[Header("Homing Attack")]
+    //public GameObject homingPrefab;
+
     public GameObject hero;
     void Start()
     {
@@ -34,6 +39,13 @@ public class BossAttackManager : MonoBehaviour
         plumePrefab.transform.position = hero.transform.position;
         GameObject plume;
         plume = Instantiate(plumePrefab, hero.transform.position, transform.rotation) as GameObject;
+    }
+
+    public void HomingAttack()
+    {
+        GameObject attack;
+        attack = Instantiate(projectilePrefab, projectileSpawn.transform.position, transform.rotation) as GameObject;
+        attack.GetComponent<Projectile>().isHoming = true;
     }
 
 }

@@ -134,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8298942274983861030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.119606, y: 3.8184419, z: 0.00036086907}
+  m_LocalPosition: {x: -7.051936, y: 3.8185039, z: 0.000014670609}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5736041758179961822}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windUpHitbox: {fileID: 6654020089619236801}
   damageHitbox: {fileID: 8940922585312843999}
-  windUp: 27
+  windUp: 1
   activeTime: 1
   damage: 25
 --- !u!1 &8940922585312843999

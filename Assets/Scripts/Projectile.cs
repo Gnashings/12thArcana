@@ -5,6 +5,30 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public bool isHeroProjectile;
+    public bool isHoming;
+    private bool startHoming;
+    public Rigidbody rb;
+    private GameObject hero;
+    void Start()
+    {
+        if(isHoming)
+        {
+            Debug.Log("im homing");
+            rb = GetComponent<Rigidbody>();
+            startHoming = false;
+            hero = GameObject.FindGameObjectWithTag("HeroHurtbox");
+            StartCoroutine(HomingStartOff());
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if(startHoming)
+        {
+            rb.position = Vector3.MoveTowards(gameObject.transform.position, hero.transform.position, Time.deltaTime * 5f);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(isHeroProjectile == false)
@@ -28,5 +52,16 @@ public class Projectile : MonoBehaviour
             }
         }
 
+    }
+
+    IEnumerator HomingStartOff()
+    {
+        rb.AddForce(gameObject.transform.up * 200);
+        yield return new WaitForSeconds(1); 
+        rb.useGravity = true;
+        yield return new WaitForSeconds(0.75f);
+        rb.useGravity = false;
+        rb.isKinematic = true;
+        startHoming = true;
     }
 }

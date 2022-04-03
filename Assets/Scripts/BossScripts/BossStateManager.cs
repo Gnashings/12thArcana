@@ -9,13 +9,15 @@ public class BossStateManager : MonoBehaviour
     public BossAttackManager bossAttacks;
 
     public InputAction attack;
-   
+    public InputAction plume;
+    public InputAction homing;
+
     [HideInInspector]
     public BossBaseState currentState;
     public BossIdleState idleState = new BossIdleState();
     public BossPlumeAttackState plumeAttackState = new BossPlumeAttackState();
     public BossFireBallState fireBallState = new BossFireBallState();
-
+    public BossHomingAttackState homingAttackState = new BossHomingAttackState();
    
     void Start()
     {
@@ -54,10 +56,14 @@ public class BossStateManager : MonoBehaviour
     {
         //attack = bossControls.BossInputs.Projectile;
         attack.Enable();
+        plume.Enable();
+        homing.Enable();
     }
 
     private void OnDisable()
     {
         attack.Disable();
+        plume.Disable();
+        homing.Disable();
     }
 }

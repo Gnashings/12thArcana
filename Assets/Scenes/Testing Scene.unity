@@ -479,6 +479,46 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Attack
       m_Flags: 0
+    - m_Name: 
+      m_Id: e02cce4a-cef6-4d49-88c5-e61271d88387
+      m_Path: <Keyboard>/z
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Attack
+      m_Flags: 0
+  plume:
+    m_Name: Plume
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f01f655a-3e37-4cd4-9660-18788f249b01
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ca057c2f-0261-45a8-924f-184cd7cc71ad
+      m_Path: <Keyboard>/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Plume
+      m_Flags: 0
+  homing:
+    m_Name: Homing
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 005fadb9-c154-431d-a766-18138762146f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3a4d4269-018f-4011-bdd8-b052047215b8
+      m_Path: <Keyboard>/c
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Homing
+      m_Flags: 0
 --- !u!114 &354525437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,8 +533,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpawn: {fileID: 1047410299}
   projectilePrefab: {fileID: 3682210616602826789, guid: 27b6e06e5586dc244a6e53563443b1de, type: 3}
-  plumePrefab: {fileID: 8298942274983861030, guid: c2bc05c032208c746905773ad816afed, type: 3}
   projectileSpeed: 200
+  plumePrefab: {fileID: 8298942274983861030, guid: c2bc05c032208c746905773ad816afed, type: 3}
   hero: {fileID: 503023742}
 --- !u!114 &354525438
 MonoBehaviour:
@@ -740,7 +780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 50
   health: 0
-  jumpChance: 0.1
+  jumpChance: 0.9
   jumpChanceMod: 0.15
   jumpHeight: 400
 --- !u!54 &503023745

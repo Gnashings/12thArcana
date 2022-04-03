@@ -18,8 +18,17 @@ public class BossIdleState : BossBaseState
     {
         if (bossState.attack.triggered)
         {
+            bossState.SwitchState(bossState.fireBallState);
+        }
+        if (bossState.plume.triggered)
+        {
             bossState.SwitchState(bossState.plumeAttackState);
         }
+        if (bossState.homing.triggered)
+        {
+            bossState.SwitchState(bossState.homingAttackState);
+        }
+
     }
     
     public override void ExitState(BossStateManager bossState)
