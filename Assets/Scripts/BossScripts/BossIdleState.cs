@@ -35,9 +35,4 @@ public class BossIdleState : BossBaseState
     {
     }
 
-    void Update()
-    {
-        
-    }
-
 }

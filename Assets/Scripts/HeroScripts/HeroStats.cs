@@ -13,7 +13,7 @@ public class HeroStats : MonoBehaviour
     public float jumpHeight;
 
     private float timer;
-
+    public bool isBlocking;
     void Start()
     {
         Debug.Log("Level : " + LevelProgress.levelCount);
@@ -28,7 +28,11 @@ public class HeroStats : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        
+        if(!isBlocking)
+        {
+            health -= damage;
+        }
         if(health <= 0)
         {
             Debug.Log(timer + " TIMER");

@@ -18,6 +18,7 @@ public class HeroStateManager : MonoBehaviour
     public HeroIdleState idleState = new HeroIdleState();
     public HeroWanderState wanderState = new HeroWanderState();
     public HeroDodgeState dodgeState = new HeroDodgeState();
+    public HeroBlockState blockState = new HeroBlockState();
     public HeroJumpState jumpState = new HeroJumpState();
 
     void Start()
@@ -56,5 +57,10 @@ public class HeroStateManager : MonoBehaviour
     public void EnableAura()
     {
         aura.enabled = true;
+    }
+
+    IEnumerator BlockTimer()
+    {
+        yield return new WaitForSeconds(1);
     }
 }

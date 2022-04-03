@@ -33,9 +33,16 @@ public class Projectile : MonoBehaviour
     {
         if(isHeroProjectile == false)
         {
+
             if (other.CompareTag("HeroAura"))
             {
-                other.GetComponent<AuraDetection>().CheckJumpDecision();
+
+                if (isHoming)
+                {
+                    other.GetComponent<AuraDetection>().CheckBlockDecision();
+                }
+                else
+                    other.GetComponent<AuraDetection>().CheckJumpDecision();
             }
             if (other.CompareTag("HeroHurtbox"))
             {
@@ -57,6 +64,7 @@ public class Projectile : MonoBehaviour
     IEnumerator HomingStartOff()
     {
         rb.AddForce(gameObject.transform.up * 200);
+        gameObject.tag = "Homing";
         yield return new WaitForSeconds(1); 
         rb.useGravity = true;
         yield return new WaitForSeconds(0.75f);

@@ -41,6 +41,11 @@ public class HeroWanderState : HeroBaseState
             heroState.SwitchState(heroState.dodgeState);
         }
 
+        if(heroState.aura.blockDecision)
+        {
+            heroState.SwitchState(heroState.blockState);
+        }
+
         heroPosX = new Vector3(heroState.transform.position.x, heroState.transform.position.y, heroState.transform.position.z);
         if (moveRight)
         {

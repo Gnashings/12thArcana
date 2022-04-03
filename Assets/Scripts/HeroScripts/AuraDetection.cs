@@ -6,6 +6,7 @@ public class AuraDetection : MonoBehaviour
 {
     public bool jumpDecision;
     public bool dodgeDecision;
+    public bool blockDecision;
 
     private float jumpChance;
 
@@ -46,5 +47,15 @@ public class AuraDetection : MonoBehaviour
         }
         else
             dodgeDecision = false;
+    }
+
+    public void CheckBlockDecision()
+    {
+        if (Random.value <= jumpChance)
+        {
+            blockDecision = true;
+        }
+        else
+            blockDecision = false;
     }
 }

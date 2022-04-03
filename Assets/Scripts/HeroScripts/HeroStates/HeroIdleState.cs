@@ -19,6 +19,11 @@ public class HeroIdleState : HeroBaseState
             heroState.SwitchState(heroState.jumpState);
         }
 
+        if (heroState.aura.blockDecision)
+        {
+            heroState.SwitchState(heroState.blockState);
+        }
+
     }
 
     public override void ExitState(HeroStateManager heroState)

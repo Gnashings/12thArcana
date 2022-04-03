@@ -42,16 +42,6 @@ public class BossStateManager : MonoBehaviour
         state.EnterState(this);
     }
 
-    public void StartAttackCD()
-    {
-        StartCoroutine(AttackCD());
-    }
-
-    IEnumerator AttackCD()
-    {
-        yield return new WaitForSeconds(3);
-    }
-
     private void OnEnable()
     {
         //attack = bossControls.BossInputs.Projectile;
