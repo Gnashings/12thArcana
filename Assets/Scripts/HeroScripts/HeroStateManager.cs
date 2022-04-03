@@ -20,6 +20,7 @@ public class HeroStateManager : MonoBehaviour
     public HeroDodgeState dodgeState = new HeroDodgeState();
     public HeroBlockState blockState = new HeroBlockState();
     public HeroJumpState jumpState = new HeroJumpState();
+    public HeroGroundAttackState attackState = new HeroGroundAttackState();
 
     void Start()
     {

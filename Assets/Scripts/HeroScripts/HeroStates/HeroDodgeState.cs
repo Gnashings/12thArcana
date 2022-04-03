@@ -44,14 +44,14 @@ public class HeroDodgeState : HeroBaseState
         else
             dodgeRight = false;
 
-        Debug.Log("dodging right: " + dodgeRight);
+        //Debug.Log("dodging right: " + dodgeRight);
     }
 
     public override void ExitState(HeroStateManager heroState)
     {
         dodgeComplete = false;
         heroState.EnableAura();
-        Debug.Log("DODGE COMPLETE");
+        //Debug.Log("DODGE COMPLETE");
     }
 
     public override void UpdateState(HeroStateManager heroState)

@@ -7,7 +7,7 @@ public class HeroIdleState : HeroBaseState
     public override void EnterState(HeroStateManager heroState)
     {
         //testing states
-        Debug.Log("swapping to wondering state");
+       // Debug.Log("swapping to wondering state");
         heroState.SwitchState(heroState.wanderState);   
     }
 

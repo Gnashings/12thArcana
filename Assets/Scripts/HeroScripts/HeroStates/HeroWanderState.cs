@@ -11,6 +11,8 @@ public class HeroWanderState : HeroBaseState
     float upperBound;
     float lowerBound;
     float range;
+    float temper;
+    bool tickTemper;
     public override void EnterState(HeroStateManager heroState)
     {
         //Debug.Log("wondering");
@@ -25,33 +27,49 @@ public class HeroWanderState : HeroBaseState
 
         //generate a random range to wander.
         range = Random.Range(lowerBound, upperBound);
+
+        //reset temper
+        temper = 0;
+
+        heroState.StartCoroutine(Temper());
+
     }
 
     public override void UpdateState(HeroStateManager heroState)
     {
-        //PATH TO JUMP STATE
+        //PATH TO JUMP/DODGE/BLOCK
         if (heroState.aura.jumpDecision)
         {
 
             heroState.SwitchState(heroState.jumpState);
         }
-
         if (heroState.aura.dodgeDecision)
         {
             heroState.SwitchState(heroState.dodgeState);
         }
-
         if(heroState.aura.blockDecision)
         {
             heroState.SwitchState(heroState.blockState);
         }
 
+        //movement
         heroPosX = new Vector3(heroState.transform.position.x, heroState.transform.position.y, heroState.transform.position.z);
         if (moveRight)
         {
             MoveRight(heroState);
         }
         else MoveLeft(heroState);
+
+        //ticking up for ground attack
+        if (tickTemper == true)
+        {
+            heroState.StartCoroutine(Temper());
+        }
+        else if (temper == 10f)
+        {
+            tickTemper = false;
+            heroState.SwitchState(heroState.attackState);
+        }
     }
 
     public override void ExitState(HeroStateManager heroState)
@@ -79,5 +97,14 @@ public class HeroWanderState : HeroBaseState
         }
         range = Random.Range(lowerBound, upperBound);
         return moveRight = true;
+    }
+
+    IEnumerator Temper()
+    {
+        tickTemper = false;
+        yield return new WaitForSeconds(1f);
+        temper++;
+        Debug.Log("TEMPER: " + temper);
+        tickTemper = true;
     }
 }
