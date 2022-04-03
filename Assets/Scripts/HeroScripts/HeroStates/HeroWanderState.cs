@@ -104,7 +104,7 @@ public class HeroWanderState : HeroBaseState
         tickTemper = false;
         yield return new WaitForSeconds(1f);
         temper++;
-        Debug.Log("TEMPER: " + temper);
+        //Debug.Log("TEMPER: " + temper);
         tickTemper = true;
     }
 }
