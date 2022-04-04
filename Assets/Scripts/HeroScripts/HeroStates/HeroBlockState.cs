@@ -12,7 +12,7 @@ public class HeroBlockState : HeroBaseState
         heroState.aura.blockDecision = false;
         doneBlocking = false;
         heroState.StartCoroutine(BlockCD());
-        Debug.Log("Im blockin");
+        //Debug.Log("Im blockin");
     }
 
     public override void ExitState(HeroStateManager heroState)

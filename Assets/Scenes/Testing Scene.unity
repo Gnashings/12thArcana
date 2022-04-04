@@ -780,9 +780,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 50
   health: 0
-  jumpChance: 0.9
+  jumpChance: 0.5
   jumpChanceMod: 0.15
   jumpHeight: 400
+  isBlocking: 0
 --- !u!54 &503023745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2191,6 +2192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpDecision: 0
   dodgeDecision: 0
+  blockDecision: 0
 --- !u!1 &1720456765
 GameObject:
   m_ObjectHideFlags: 0

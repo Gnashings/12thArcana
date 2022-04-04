@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     {
         if(isHoming)
         {
-            Debug.Log("im homing");
+            //Debug.Log("im homing");
             rb = GetComponent<Rigidbody>();
             startHoming = false;
             hero = GameObject.FindGameObjectWithTag("HeroHurtbox");
