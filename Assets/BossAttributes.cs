@@ -8,17 +8,12 @@ public class BossAttributes : MonoBehaviour
     public float totalHealth;
     [HideInInspector]
     public float health;
-    // Start is called before the first frame update
+
     void Start()
     {
         health = totalHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void TakeDamage(float damage)
     {
         health -= damage;

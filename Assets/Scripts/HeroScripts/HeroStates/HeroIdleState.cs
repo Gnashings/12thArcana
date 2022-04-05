@@ -7,27 +7,32 @@ public class HeroIdleState : HeroBaseState
     public override void EnterState(HeroStateManager heroState)
     {
         //testing states
-       // Debug.Log("swapping to wondering state");
-        heroState.SwitchState(heroState.wanderState);   
+        // Debug.Log("swapping to wondering state");
     }
 
     public override void UpdateState(HeroStateManager heroState)
     {
-        if(heroState.aura.jumpDecision)
+        
+        
+        if (heroState.aura.jumpDecision)
         {
 
             heroState.SwitchState(heroState.jumpState);
         }
-
-        if (heroState.aura.blockDecision)
+        else if (heroState.aura.blockDecision)
         {
             heroState.SwitchState(heroState.blockState);
+        }
+        else
+        {
+            heroState.SwitchState(heroState.wanderState);
         }
 
     }
 
     public override void ExitState(HeroStateManager heroState)
     {
+
     }
 
 }

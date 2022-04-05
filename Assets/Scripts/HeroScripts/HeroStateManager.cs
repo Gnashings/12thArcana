@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HeroStateManager : MonoBehaviour
 {
+    public bool paused;
     public AuraDetection aura;
     public HeroStats stats;
     public Rigidbody rBody;
@@ -31,7 +32,11 @@ public class HeroStateManager : MonoBehaviour
 
     void Update()
     {
-        currentState.UpdateState(this);
+        if(!LevelProgress.isPaused)
+        {
+            currentState.UpdateState(this);
+        }    
+        
     }
     void FixedUpdate()
     {

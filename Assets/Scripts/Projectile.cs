@@ -23,6 +23,11 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(LevelProgress.isPaused)
+        {
+            return;
+        }
+
         if(startHoming)
         {
             rb.position = Vector3.MoveTowards(gameObject.transform.position, hero.transform.position, Time.deltaTime * 5f);

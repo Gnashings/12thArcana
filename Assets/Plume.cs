@@ -10,14 +10,22 @@ public class Plume : MonoBehaviour
     public float activeTime;
     public float damage;
 
+    private bool started;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(PlumeLifeTime());
-    }
 
+        StartCoroutine(PlumeLifeTime());
+        
+        
+    }
     IEnumerator PlumeLifeTime()
     {
+        while (LevelProgress.isPaused)
+        {
+            yield return null;
+        }
         windUpHitbox.SetActive(true);
         yield return new WaitForSeconds(windUp);
         windUpHitbox.SetActive(false);

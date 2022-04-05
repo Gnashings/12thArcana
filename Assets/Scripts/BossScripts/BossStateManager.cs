@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine;
+
 
 public class BossStateManager : MonoBehaviour
 {
-    public BossControls bossControls;
+    public bool paused;
+    public BossControls inputs;
     public BossAttackManager bossAttacks;
-
+    [HideInInspector]
     public InputAction attack;
+    [HideInInspector]
     public InputAction plume;
+    [HideInInspector]
     public InputAction homing;
 
     [HideInInspector]
@@ -18,10 +22,15 @@ public class BossStateManager : MonoBehaviour
     public BossPlumeAttackState plumeAttackState = new BossPlumeAttackState();
     public BossFireBallState fireBallState = new BossFireBallState();
     public BossHomingAttackState homingAttackState = new BossHomingAttackState();
-   
+
+    void Awake()
+    {
+        inputs = new BossControls();
+    }
+
     void Start()
     {
-        bossControls = new BossControls();
+
         currentState = idleState;
  
         currentState.EnterState(this);
@@ -29,7 +38,11 @@ public class BossStateManager : MonoBehaviour
 
     void Update()
     {
-        currentState.UpdateState(this);
+        if(!LevelProgress.isPaused)
+        {
+            currentState.UpdateState(this);
+        }
+        
     }
 
     public void SwitchState(BossBaseState state)
@@ -44,7 +57,9 @@ public class BossStateManager : MonoBehaviour
 
     private void OnEnable()
     {
-        //attack = bossControls.BossInputs.Projectile;
+        attack = inputs.BossInputs.Projectile;
+        plume = inputs.BossInputs.Plume;
+        homing = inputs.BossInputs.Homing;
         attack.Enable();
         plume.Enable();
         homing.Enable();

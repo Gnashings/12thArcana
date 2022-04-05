@@ -41,6 +41,14 @@ public class @BossControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""d4be76a5-8c71-40cc-ba95-f8f57893256b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -72,7 +80,7 @@ public class @BossControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""BossControls"",
                     ""action"": ""Plume"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -83,8 +91,19 @@ public class @BossControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""BossControls"",
                     ""action"": ""Homing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""90ee4f3c-ae37-419b-8d94-8b5d580cbf7d"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""BossControls"",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -104,6 +123,7 @@ public class @BossControls : IInputActionCollection, IDisposable
         m_BossInputs_Projectile = m_BossInputs.FindAction("Projectile", throwIfNotFound: true);
         m_BossInputs_Plume = m_BossInputs.FindAction("Plume", throwIfNotFound: true);
         m_BossInputs_Homing = m_BossInputs.FindAction("Homing", throwIfNotFound: true);
+        m_BossInputs_Pause = m_BossInputs.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -156,6 +176,7 @@ public class @BossControls : IInputActionCollection, IDisposable
     private readonly InputAction m_BossInputs_Projectile;
     private readonly InputAction m_BossInputs_Plume;
     private readonly InputAction m_BossInputs_Homing;
+    private readonly InputAction m_BossInputs_Pause;
     public struct BossInputsActions
     {
         private @BossControls m_Wrapper;
@@ -163,6 +184,7 @@ public class @BossControls : IInputActionCollection, IDisposable
         public InputAction @Projectile => m_Wrapper.m_BossInputs_Projectile;
         public InputAction @Plume => m_Wrapper.m_BossInputs_Plume;
         public InputAction @Homing => m_Wrapper.m_BossInputs_Homing;
+        public InputAction @Pause => m_Wrapper.m_BossInputs_Pause;
         public InputActionMap Get() { return m_Wrapper.m_BossInputs; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -181,6 +203,9 @@ public class @BossControls : IInputActionCollection, IDisposable
                 @Homing.started -= m_Wrapper.m_BossInputsActionsCallbackInterface.OnHoming;
                 @Homing.performed -= m_Wrapper.m_BossInputsActionsCallbackInterface.OnHoming;
                 @Homing.canceled -= m_Wrapper.m_BossInputsActionsCallbackInterface.OnHoming;
+                @Pause.started -= m_Wrapper.m_BossInputsActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_BossInputsActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_BossInputsActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_BossInputsActionsCallbackInterface = instance;
             if (instance != null)
@@ -194,6 +219,9 @@ public class @BossControls : IInputActionCollection, IDisposable
                 @Homing.started += instance.OnHoming;
                 @Homing.performed += instance.OnHoming;
                 @Homing.canceled += instance.OnHoming;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -212,5 +240,6 @@ public class @BossControls : IInputActionCollection, IDisposable
         void OnProjectile(InputAction.CallbackContext context);
         void OnPlume(InputAction.CallbackContext context);
         void OnHoming(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
