@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190f20e9fe318d549a52f21951e4fae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 1
+  totalHealth: 50
   health: 0
   jumpChance: 0.1
   jumpChanceMod: 0.15
