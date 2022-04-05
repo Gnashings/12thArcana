@@ -36,9 +36,18 @@ public class Dialogue : MonoBehaviour
         LevelProgress.isPaused = true;
         LevelProgress.disableControls = true;
         textBox.text = string.Empty;
-        StartDialog();
+        
+        if (levelDialogues.Count <= LevelProgress.levelCount)
+        {
+            print("DIALOG SHOULD NOT APPEAR");
 
-        CycleSpeeches();
+            WrapDialog();
+        }
+        else
+            CycleSpeeches();
+
+
+
     }
 
     void CycleSpeeches()
@@ -54,7 +63,7 @@ public class Dialogue : MonoBehaviour
                     doneSpeaking = true;
                     break;
                 }    
-                print(level.totalConvos[totalSpeeches].dialogue);
+                //print(level.totalConvos[totalSpeeches].dialogue);
 
                 StartCoroutine(TypeLine(level.totalConvos[totalSpeeches].dialogue));
                 /*
@@ -81,11 +90,21 @@ public class Dialogue : MonoBehaviour
         textBox.text = string.Empty;
         CycleSpeeches();
         //print("done? " + doneSpeaking);
+        CheckDoneSpeaking();
+    }
+    void WrapDialog()
+    {
+        continueBtn.gameObject.SetActive(false);
+        LevelProgress.isPaused = false;
+        LevelProgress.disableControls = false;
+    }
+    void CheckDoneSpeaking()
+    {
         if (doneSpeaking)
         {
             LevelProgress.isPaused = false;
             LevelProgress.disableControls = false;
-            print("done");
+            //print("done");
         }
     }
     void StartDialog()

@@ -760,9 +760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190f20e9fe318d549a52f21951e4fae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 50
+  totalHealth: 1
   health: 0
-  jumpChance: 0.5
+  jumpChance: 0.1
   jumpChanceMod: 0.15
   jumpHeight: 400
   isBlocking: 0
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1425505390}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1237308893
@@ -2931,7 +2931,7 @@ MonoBehaviour:
       dialogue: YOU STEAL MENS SOULS!
   - totalConvos:
     - isHero: 0
-      dialogue: SCUM
+      dialogue: IT'S LIKE RAIN ON YOUR WEDDING DAY.
 --- !u!4 &2094728653
 Transform:
   m_ObjectHideFlags: 0
