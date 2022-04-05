@@ -39,7 +39,7 @@ public class Dialogue : MonoBehaviour
         
         if (levelDialogues.Count <= LevelProgress.levelCount)
         {
-            print("DIALOG SHOULD NOT APPEAR");
+            //print("DIALOG SHOULD NOT APPEAR");
 
             WrapDialog();
         }
