@@ -7,4 +7,5 @@ public static class LevelProgress
     public static int levelCount;
     public static float timePlayed;
     public static bool isPaused;
+    public static bool disableControls;
 }

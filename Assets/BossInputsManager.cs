@@ -15,7 +15,7 @@ public class BossInputsManager : MonoBehaviour
 
     void Update()
     {
-        if (pause.triggered)
+        if (pause.triggered && LevelProgress.disableControls == false)
         {
             
             if (!LevelProgress.isPaused)

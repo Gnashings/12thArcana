@@ -2,71 +2,123 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textBox;
+    public Button continueBtn;
     private string[] lines;
     public float textSpeed;
 
-    private int index;
-
+    public int index;
+    bool doneSpeaking;
     //new shit
+    [System.Serializable]
+    public class LevelDialogues
+    {
+        public List<Speech> totalConvos;
+    }
+
     [System.Serializable]
     public class Speech
     {
         public bool isHero;
-        public int level;
         public string dialogue;
     }
 
-    public List<Speech> speeches;
-    public Dictionary<bool, string> talk;
+    public List<LevelDialogues> levelDialogues;
 
+    private int totalSpeeches;
     void Start()
     {
+        LevelProgress.isPaused = true;
+        LevelProgress.disableControls = true;
         textBox.text = string.Empty;
         StartDialog();
 
-        //new shit
+        CycleSpeeches();
+    }
 
-        foreach(Speech speech in speeches)
+    void CycleSpeeches()
+    {
+        continueBtn.gameObject.SetActive(false);
+        int i = 0;
+        foreach(LevelDialogues level in levelDialogues)
         {
-        }
+            if(i == LevelProgress.levelCount)
+            {
+                if (totalSpeeches >= level.totalConvos.Count)
+                {
+                    doneSpeaking = true;
+                    break;
+                }    
+                print(level.totalConvos[totalSpeeches].dialogue);
 
+                StartCoroutine(TypeLine(level.totalConvos[totalSpeeches].dialogue));
+                /*
+                foreach (Speech speech in level.totalConvos)
+                {
+                    print(speech.dialogue);
+                    StartCoroutine(TypeLine(speech.dialogue));
+                    break;
+                }*/
+            }
+            i++;
+        }
     }
 
 
     void Update()
     {
+
     }
 
+    public void ContDialogue()
+    {
+        totalSpeeches++;
+        textBox.text = string.Empty;
+        CycleSpeeches();
+        //print("done? " + doneSpeaking);
+        if (doneSpeaking)
+        {
+            LevelProgress.isPaused = false;
+            LevelProgress.disableControls = false;
+            print("done");
+        }
+    }
     void StartDialog()
     {
         index = 0;
     }
 
+    /*
     void NextLine()
     {
         if (index < lines.Length - 1)
         {
             index++;
             textBox.text = string.Empty;
-            StartCoroutine(TypeLine());
+            StartCoroutine(TypeLine(line));
         }
         else
         {
             gameObject.SetActive(false);
         }
     }
+    */
 
-    IEnumerator TypeLine()
+    IEnumerator TypeLine(string line)
     {
-        foreach (char letter in lines[index].ToCharArray())
+        foreach (char letter in line.ToCharArray())
         {
             textBox.text += letter;
+
             yield return new WaitForSeconds(textSpeed);
         }
+        yield return new WaitForSeconds(textSpeed);
+        continueBtn.gameObject.SetActive(true);
 
     }
 }

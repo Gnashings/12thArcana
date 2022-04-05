@@ -2167,7 +2167,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1425505393}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2094728652}
+        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
+        m_MethodName: ContDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1425505393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2908,11 +2920,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 1930391560}
-  textSpeed: 1
-  speeches:
-  - isHero: 0
-    level: 0
-    dialogue: 
+  continueBtn: {fileID: 1425505392}
+  textSpeed: 0.15
+  index: 1
+  levelDialogues:
+  - totalConvos:
+    - isHero: 0
+      dialogue: DIE MONSTER
+    - isHero: 0
+      dialogue: YOU STEAL MENS SOULS!
+  - totalConvos:
+    - isHero: 0
+      dialogue: SCUM
 --- !u!4 &2094728653
 Transform:
   m_ObjectHideFlags: 0
