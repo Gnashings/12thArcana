@@ -41,7 +41,7 @@ public class Plume : MonoBehaviour
     {
         if (other.CompareTag("HeroHurtbox"))
         {
-            other.GetComponentInParent<HeroStats>().TakeDamage(20);
+            other.GetComponentInParent<HeroAttributes>().TakeDamage(20);
             Destroy(gameObject);
         }
         

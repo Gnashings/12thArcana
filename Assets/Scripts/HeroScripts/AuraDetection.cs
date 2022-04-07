@@ -12,7 +12,7 @@ public class AuraDetection : MonoBehaviour
 
     void Start()
     {
-        jumpChance = GetComponentInParent<HeroStats>().jumpChance;
+        jumpChance = GetComponentInParent<HeroAttributes>().jumpChance;
     }
 
 

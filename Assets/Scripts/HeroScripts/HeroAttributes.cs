@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HeroStats : MonoBehaviour
+public class HeroAttributes : MonoBehaviour
 {
     public float totalHealth;
     [HideInInspector]
@@ -35,15 +35,18 @@ public class HeroStats : MonoBehaviour
         }
         if(health <= 0)
         {
-            Debug.Log(timer + " TIMER");
-            
-            LevelProgress.levelCount++;
-            SceneManager.LoadScene("Testing Scene");
+            //Debug.Log(timer + " TIMER");
+
+            //LevelProgress.levelCount++;
+            //SceneManager.LoadScene("Testing Scene");
+            gameObject.GetComponent<HeroStateManager>().enabled = false;
+            gameObject.GetComponent<HeroAttributes>().enabled = false;
         }
     }
 
     private void OnDisable()
     {
+        LevelProgress.levelCount++;
         LevelProgress.timePlayed += timer;
     }
 }

@@ -41,6 +41,7 @@ public class BossStateManager : MonoBehaviour
         if(!LevelProgress.isPaused)
         {
             currentState.UpdateState(this);
+            LevelProgress.bossState = currentState.ToString();
         }
         
     }

@@ -10,7 +10,7 @@ public class PlumeDamage : MonoBehaviour
 
         if (other.CompareTag("HeroHurtbox"))
         {
-            other.GetComponentInParent<HeroStats>().TakeDamage(plume.damage);
+            other.GetComponentInParent<HeroAttributes>().TakeDamage(plume.damage);
         }
 
     }

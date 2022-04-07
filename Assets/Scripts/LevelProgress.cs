@@ -8,4 +8,9 @@ public static class LevelProgress
     public static float timePlayed;
     public static bool isPaused;
     public static bool disableControls;
+
+    public static string bossState;
+    public static string heroState;
+
+    public static bool levelFinished;
 }

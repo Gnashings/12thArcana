@@ -6,7 +6,7 @@ public class HeroStateManager : MonoBehaviour
 {
     public bool paused;
     public AuraDetection aura;
-    public HeroStats stats;
+    public HeroAttributes stats;
     public Rigidbody rBody;
     public HeroAttacks heroAttacks;
     public GameObject leftWaypoint;
@@ -35,6 +35,7 @@ public class HeroStateManager : MonoBehaviour
         if(!LevelProgress.isPaused)
         {
             currentState.UpdateState(this);
+            LevelProgress.heroState = currentState.ToString();
         }    
         
     }

@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textBox;
     public Button continueBtn;
-    private string[] lines;
+    public GameUI gameUI;
     public float textSpeed;
 
-    public int index;
-    bool doneSpeaking;
-    //new shit
+    bool mainTextFinished;
+    bool allTextFinished;
+    //new
     [System.Serializable]
     public class LevelDialogues
     {
@@ -31,102 +31,84 @@ public class Dialogue : MonoBehaviour
     public List<LevelDialogues> levelDialogues;
 
     private int totalSpeeches;
+    private int thisLevel;
+    [HideInInspector]
+    public bool allTextsOver;
     void Start()
     {
         LevelProgress.isPaused = true;
         LevelProgress.disableControls = true;
         textBox.text = string.Empty;
-        
+        thisLevel = LevelProgress.levelCount;
         if (levelDialogues.Count <= LevelProgress.levelCount)
         {
-            //print("DIALOG SHOULD NOT APPEAR");
-
-            WrapDialog();
+            continueBtn.gameObject.SetActive(false);
+            ReturnPlayerControls();
         }
         else
             CycleSpeeches();
-
-
-
     }
 
-    void CycleSpeeches()
+    public void CycleSpeeches()
     {
         continueBtn.gameObject.SetActive(false);
-        int i = 0;
-        foreach(LevelDialogues level in levelDialogues)
+        
+        //print(levelDialogues[thisLevel].totalConvos[totalSpeeches].dialogue);
+        print("TOTAL TALKS: " + totalSpeeches);
+           
+        if (totalSpeeches == levelDialogues[thisLevel].totalConvos.Count-1)
         {
-            if(i == LevelProgress.levelCount)
-            {
-                if (totalSpeeches >= level.totalConvos.Count)
-                {
-                    doneSpeaking = true;
-                    break;
-                }    
-                //print(level.totalConvos[totalSpeeches].dialogue);
-
-                StartCoroutine(TypeLine(level.totalConvos[totalSpeeches].dialogue));
-                /*
-                foreach (Speech speech in level.totalConvos)
-                {
-                    print(speech.dialogue);
-                    StartCoroutine(TypeLine(speech.dialogue));
-                    break;
-                }*/
-            }
-            i++;
+            ReturnPlayerControls();
+            mainTextFinished = true;
+            return;
         }
-    }
 
+        StartCoroutine(TypeLine(levelDialogues[thisLevel].totalConvos[totalSpeeches].dialogue));
+        totalSpeeches++;
+
+    }
 
     void Update()
     {
 
     }
 
+    //OnButtonClick
     public void ContDialogue()
     {
-        totalSpeeches++;
         textBox.text = string.Empty;
-        CycleSpeeches();
-        //print("done? " + doneSpeaking);
-        CheckDoneSpeaking();
-    }
-    void WrapDialog()
-    {
-        continueBtn.gameObject.SetActive(false);
-        LevelProgress.isPaused = false;
-        LevelProgress.disableControls = false;
-    }
-    void CheckDoneSpeaking()
-    {
-        if (doneSpeaking)
+        if (mainTextFinished == false)
         {
-            LevelProgress.isPaused = false;
-            LevelProgress.disableControls = false;
-            //print("done");
-        }
-    }
-    void StartDialog()
-    {
-        index = 0;
-    }
-
-    /*
-    void NextLine()
-    {
-        if (index < lines.Length - 1)
-        {
-            index++;
-            textBox.text = string.Empty;
-            StartCoroutine(TypeLine(line));
+            CycleSpeeches();
         }
         else
         {
-            gameObject.SetActive(false);
+            if(allTextFinished)
+            {
+                continueBtn.gameObject.SetActive(false);
+                if(LevelProgress.levelFinished)
+                {
+                    //StartCoroutine(gameUI.FadeOutScene());
+                    SceneManager.LoadScene("Testing Scene");
+                }
+                return;
+            }
+                ProcFinalDialogue();
         }
     }
-    */
+
+    void ProcFinalDialogue()
+    {
+        StartCoroutine(TypeLine(levelDialogues[thisLevel].totalConvos[totalSpeeches].dialogue));
+        allTextFinished = true;
+    }
+
+    void ReturnPlayerControls()
+    {
+        LevelProgress.isPaused = false;
+        LevelProgress.disableControls = false;
+        
+    }
 
     IEnumerator TypeLine(string line)
     {
@@ -140,4 +122,5 @@ public class Dialogue : MonoBehaviour
         continueBtn.gameObject.SetActive(true);
 
     }
+
 }
