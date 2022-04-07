@@ -762,7 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 1
   health: 0
-  jumpChance: 0
+  jumpChance: 1
   jumpChanceMod: 0.15
   jumpHeight: 400
   isBlocking: 0
@@ -3003,19 +3003,74 @@ MonoBehaviour:
   levelDialogues:
   - totalConvos:
     - isHero: 0
-      dialogue: START L1
+      dialogue: Hmm? Who are you?
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
     - isHero: 0
-      dialogue: MIDDLE L1
+      dialogue: Hah! As if an insignificant insect would ever have the chance to
+        defeat me!
+    - isHero: 1
+      dialogue: Have at you!
     - isHero: 0
       dialogue: END L1
   - totalConvos:
     - isHero: 0
-      dialogue: START L2
+      dialogue: "Wait. Didn\u2019t I already kill you?"
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: Hmm. No matter, I have disposed of you once. I can do it again.
+    - isHero: 1
+      dialogue: Have at you!
     - isHero: 0
       dialogue: END L2
   - totalConvos:
     - isHero: 0
-      dialogue: START L3
+      dialogue: What is this trickery? How many times must I kill you.
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: This is starting to irritate me.
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L3
+  - totalConvos:
+    - isHero: 0
+      dialogue: How is it that you keep returning. I have killed you thrice now and
+        yet here you stand before me. Is this sorcery, a trick of the mind, or divine
+        intervention?
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: You say that every time. Do you not see the futility? Even with such
+        miraculous immortality you cannot defeat me.
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L3
+  - totalConvos:
+    - isHero: 0
+      dialogue: "This cannot be real. Have I constructed a mental prison? No matter
+        how many times you die you always return. It is as if it is a cycle of destiny\u2026"
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: No, I refuse. This cycle can be broken.
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L3
+  - totalConvos:
+    - isHero: 0
+      dialogue: Please. Must this continue for eternity? The cycle is endless.
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: Is this some form of purgatory? Have I already died and now I am
+        paying for my sins? Perhaps the only way out is death.
+    - isHero: 1
+      dialogue: Have at you!
     - isHero: 0
       dialogue: END L3
   allTextsOver: 0
