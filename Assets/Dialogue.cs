@@ -54,7 +54,7 @@ public class Dialogue : MonoBehaviour
         continueBtn.gameObject.SetActive(false);
         
         //print(levelDialogues[thisLevel].totalConvos[totalSpeeches].dialogue);
-        print("TOTAL TALKS: " + totalSpeeches);
+        //print("TOTAL TALKS: " + totalSpeeches);
            
         if (totalSpeeches == levelDialogues[thisLevel].totalConvos.Count-1)
         {
