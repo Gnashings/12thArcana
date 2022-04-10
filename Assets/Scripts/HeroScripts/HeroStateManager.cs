@@ -13,9 +13,10 @@ public class HeroStateManager : MonoBehaviour
     public GameObject rightWaypoint;
     public GameObject dodgeLeftWaypoint;
     public GameObject dodgeRightWaypoint;
+    public Animator anim;
     [HideInInspector]
     public HeroBaseState currentState;
-
+    public bool isGrounded;
     public HeroIdleState idleState = new HeroIdleState();
     public HeroWanderState wanderState = new HeroWanderState();
     public HeroDodgeState dodgeState = new HeroDodgeState();
@@ -43,7 +44,19 @@ public class HeroStateManager : MonoBehaviour
     {
         
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            isGrounded = true;
+            Debug.Log("Grounded");
+        }
+        else
+        {
+            isGrounded = false;
+            Debug.Log("Not Grounded!");
+        }
+    }
     public void SwitchState(HeroBaseState state)
     {
         //call the exit before swapping states.

@@ -8,7 +8,9 @@ public class HeroGroundAttackState : HeroBaseState
     public override void EnterState(HeroStateManager heroState)
     {
         doneAttacking = false;
+        heroState.anim.Play("attack_anim");
         heroState.StartCoroutine(AttackCD(heroState));
+        
     }
 
     public override void ExitState(HeroStateManager heroState)

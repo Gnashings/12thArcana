@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - HeroHurtbox
   - Homing
+  - Floor
   layers:
   - Default
   - TransparentFX
