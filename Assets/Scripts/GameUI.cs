@@ -13,8 +13,16 @@ public class GameUI : MonoBehaviour
     public Text heroState;
     public Text heroJumpChance;
     public Image panel;
+    public GameObject dialogueBox;
+    public GameObject heroPort;
+    public GameObject bossPort;
     HeroAttributes heroStats;
     BossAttributes bossAttributes;
+
+    private void Awake()
+    {
+        StopTalking();
+    }
     void Start()
     {
         heroStats = hero.GetComponent<HeroAttributes>();
@@ -47,6 +55,23 @@ public class GameUI : MonoBehaviour
     {
 
         
+    }
+    public void HeroTalking()
+    {
+        heroPort.SetActive(true);
+        bossPort.SetActive(false);
+    }
+
+    public void BossTalking()
+    {
+        heroPort.SetActive(false);
+        bossPort.SetActive(true);
+    }
+
+    public void StopTalking()
+    {
+        heroPort.SetActive(false);
+        bossPort.SetActive(false);
     }
 
     float check = 1;

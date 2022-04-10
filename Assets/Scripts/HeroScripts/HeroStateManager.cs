@@ -49,12 +49,10 @@ public class HeroStateManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isGrounded = true;
-            Debug.Log("Grounded");
         }
         else
         {
             isGrounded = false;
-            Debug.Log("Not Grounded!");
         }
     }
     public void SwitchState(HeroBaseState state)

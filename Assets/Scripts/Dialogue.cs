@@ -52,7 +52,6 @@ public class Dialogue : MonoBehaviour
     public void CycleSpeeches()
     {
         continueBtn.gameObject.SetActive(false);
-        
         //print(levelDialogues[thisLevel].totalConvos[totalSpeeches].dialogue);
         //print("TOTAL TALKS: " + totalSpeeches);
            
@@ -60,9 +59,15 @@ public class Dialogue : MonoBehaviour
         {
             ReturnPlayerControls();
             mainTextFinished = true;
+            gameUI.dialogueBox.SetActive(false);
             return;
         }
-
+        if (levelDialogues[thisLevel].totalConvos[totalSpeeches].isHero == true)
+        {
+            gameUI.HeroTalking();
+        }
+        else
+            gameUI.BossTalking();
         StartCoroutine(TypeLine(levelDialogues[thisLevel].totalConvos[totalSpeeches].dialogue));
         totalSpeeches++;
 
@@ -77,8 +82,10 @@ public class Dialogue : MonoBehaviour
     public void ContDialogue()
     {
         textBox.text = string.Empty;
+        gameUI.dialogueBox.SetActive(true);
         if (mainTextFinished == false)
         {
+            gameUI.dialogueBox.SetActive(true);
             CycleSpeeches();
         }
         else
@@ -86,6 +93,7 @@ public class Dialogue : MonoBehaviour
             if(allTextFinished)
             {
                 continueBtn.gameObject.SetActive(false);
+                gameUI.dialogueBox.SetActive(false);
                 if(LevelProgress.levelFinished)
                 {
                     //StartCoroutine(gameUI.FadeOutScene());
