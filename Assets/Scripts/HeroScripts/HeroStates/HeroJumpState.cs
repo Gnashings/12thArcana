@@ -6,15 +6,19 @@ public class HeroJumpState : HeroBaseState
 {
     public override void EnterState(HeroStateManager heroState)
     {
-        heroState.DumpAuraMemory();
-
+        //heroState.DumpAuraMemory();
+        heroState.aura.jumpDecision = false;
+        heroState.isGrounded = false;
         heroState.rBody.AddForce(heroState.transform.up * heroState.stats.jumpHeight);
+        heroState.anim.Play("jump_anim");
         heroState.heroAttacks.FireProjectile();
+        
     }
-
+    
     public override void UpdateState(HeroStateManager heroState)
     {
-        if(heroState.rBody.IsSleeping())
+        heroState.aura.jumpDecision = false;
+        if (heroState.isGrounded)
         {
             heroState.SwitchState(heroState.idleState);
         }

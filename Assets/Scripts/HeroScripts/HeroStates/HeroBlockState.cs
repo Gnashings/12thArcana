@@ -13,6 +13,7 @@ public class HeroBlockState : HeroBaseState
         doneBlocking = false;
         heroState.StartCoroutine(BlockCD());
         //Debug.Log("Im blockin");
+        heroState.anim.Play("block_anim");
     }
 
     public override void ExitState(HeroStateManager heroState)

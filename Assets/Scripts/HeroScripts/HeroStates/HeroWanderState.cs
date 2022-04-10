@@ -32,7 +32,7 @@ public class HeroWanderState : HeroBaseState
         temper = 0;
 
         heroState.StartCoroutine(Temper());
-
+        heroState.anim.Play("walk_anim");
     }
 
     public override void UpdateState(HeroStateManager heroState)
