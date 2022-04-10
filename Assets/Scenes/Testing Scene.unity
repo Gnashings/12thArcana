@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 5164987}
   - component: {fileID: 5164988}
   - component: {fileID: 5164989}
+  - component: {fileID: 5164990}
   m_Layer: 0
   m_Name: Model
   m_TagString: Boss
@@ -219,6 +220,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5164990
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5164986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7adbe7da81a922541982ac8516e8cea0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &53869746
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +501,7 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Homing
       m_Flags: 0
+  anims: {fileID: 5164990}
 --- !u!114 &354525437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1265,7 +1286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858864152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.36, y: -1.36, z: 0}
+  m_LocalPosition: {x: -0.17, y: -1.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 503023743}
@@ -1596,7 +1617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047410299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.01, y: 1.41, z: 0}
+  m_LocalPosition: {x: -1.48, y: 1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 354525435}
@@ -1650,7 +1671,6 @@ GameObject:
   - component: {fileID: 1137286767}
   - component: {fileID: 1137286768}
   - component: {fileID: 1137286770}
-  - component: {fileID: 1137286769}
   m_Layer: 0
   m_Name: Model
   m_TagString: HeroHurtbox
@@ -1736,19 +1756,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &1137286769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137286765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21fdb38c4dbda1f45b5eed02cb1938d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGrounded: 0
 --- !u!95 &1137286770
 Animator:
   serializedVersion: 3

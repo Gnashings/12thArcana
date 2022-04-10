@@ -6,6 +6,8 @@ public class Plume : MonoBehaviour
 {
     public GameObject windUpHitbox;
     public GameObject damageHitbox;
+    public GameObject startFX;
+    public GameObject endFX;
     public float windUp;
     public float activeTime;
     public float damage;
@@ -27,11 +29,13 @@ public class Plume : MonoBehaviour
             yield return null;
         }
         windUpHitbox.SetActive(true);
+        Instantiate(startFX, transform.position, transform.rotation);
         yield return new WaitForSeconds(windUp);
         windUpHitbox.SetActive(false);
 
         damageHitbox.SetActive(true);
         yield return new WaitForSeconds(activeTime);
+        Instantiate(endFX, transform.position, transform.rotation);
         damageHitbox.SetActive(false);
 
         Destroy(gameObject);

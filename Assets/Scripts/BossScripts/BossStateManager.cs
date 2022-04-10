@@ -15,17 +15,17 @@ public class BossStateManager : MonoBehaviour
     public InputAction plume;
     [HideInInspector]
     public InputAction homing;
-
     [HideInInspector]
     public BossBaseState currentState;
     public BossIdleState idleState = new BossIdleState();
     public BossPlumeAttackState plumeAttackState = new BossPlumeAttackState();
     public BossFireBallState fireBallState = new BossFireBallState();
     public BossHomingAttackState homingAttackState = new BossHomingAttackState();
-
+    public Animator anims;
     void Awake()
     {
         inputs = new BossControls();
+        anims.Play("lich_idle_anim");
     }
 
     void Start()

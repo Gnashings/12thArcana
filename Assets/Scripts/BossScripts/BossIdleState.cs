@@ -5,13 +5,9 @@ using UnityEngine.InputSystem;
 
 public class BossIdleState : BossBaseState
 {
-    void Start()
-    {
-        
-    }
-
     public override void EnterState(BossStateManager bossState)
     {
+        bossState.anims.Play("lich_idle_anim");
     }
 
     public override void UpdateState(BossStateManager bossState)

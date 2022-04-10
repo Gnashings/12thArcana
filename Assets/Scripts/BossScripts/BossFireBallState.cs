@@ -10,6 +10,7 @@ public class BossFireBallState : BossBaseState
     {
         bossState.bossAttacks.FireProjectile();
         bossState.StartCoroutine(AttackCD());
+        bossState.anims.Play("lich_FB_anim");
     }
 
     public override void UpdateState(BossStateManager bossState)
