@@ -17,15 +17,17 @@ public class BossInputsManager : MonoBehaviour
     {
         if (pause.triggered && LevelProgress.disableControls == false)
         {
-            
+            LevelProgress.canDisplayControls = true;
             if (!LevelProgress.isPaused)
             {
                 LevelProgress.isPaused = true;
+                //LevelProgress.canDisplayControls = true;
                 Time.timeScale = 0;
             }
             else
             {
                 LevelProgress.isPaused = false;
+                LevelProgress.canDisplayControls = false;
                 Time.timeScale = 1;
             }
         }

@@ -16,6 +16,7 @@ public class GameUI : MonoBehaviour
     public GameObject dialogueBox;
     public GameObject heroPort;
     public GameObject bossPort;
+    public GameObject pauseMenu;
     HeroAttributes heroStats;
     BossAttributes bossAttributes;
 
@@ -48,6 +49,14 @@ public class GameUI : MonoBehaviour
 
         heroState.text = LevelProgress.heroState;
         bossState.text = LevelProgress.bossState;
+        if(LevelProgress.canDisplayControls)
+        {
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+        }
         
     }
 
