@@ -652,7 +652,7 @@ MonoBehaviour:
   projectileSpawn: {fileID: 1047410299}
   projectilePrefab: {fileID: 3682210616602826789, guid: 27b6e06e5586dc244a6e53563443b1de, type: 3}
   projectileSpeed: 200
-  plumeSpawn: {fileID: 0}
+  plumeSpawn: {fileID: 882454819}
   plumePrefab: {fileID: 8298942274983861030, guid: c2bc05c032208c746905773ad816afed, type: 3}
   hero: {fileID: 503023742}
 --- !u!114 &354525438
