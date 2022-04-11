@@ -9,6 +9,7 @@ public class BossHomingAttackState : BossBaseState
     {
         bossState.bossAttacks.HomingAttack();
         bossState.StartCoroutine(AttackCD());
+        bossState.anims.Play("lich_plume_anim");
     }
 
     public override void ExitState(BossStateManager bossState)

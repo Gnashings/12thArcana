@@ -10,6 +10,7 @@ public class BossAttackManager : MonoBehaviour
     public float projectileSpeed;
 
     [Header("Plume")]
+    public GameObject plumeSpawn;
     public GameObject plumePrefab;
 
     //[Header("Homing Attack")]
@@ -36,9 +37,9 @@ public class BossAttackManager : MonoBehaviour
 
     public void PlumeAttack()
     {
-        plumePrefab.transform.position = hero.transform.position;
+        plumeSpawn.transform.position = hero.transform.position;
         GameObject plume;
-        plume = Instantiate(plumePrefab, hero.transform.position, transform.rotation) as GameObject;
+        plume = Instantiate(plumePrefab, plumeSpawn.transform.position, transform.rotation) as GameObject;
     }
 
     public void HomingAttack()

@@ -586,6 +586,7 @@ Transform:
   m_Children:
   - {fileID: 5164987}
   - {fileID: 1047410300}
+  - {fileID: 882454820}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -651,6 +652,7 @@ MonoBehaviour:
   projectileSpawn: {fileID: 1047410299}
   projectilePrefab: {fileID: 3682210616602826789, guid: 27b6e06e5586dc244a6e53563443b1de, type: 3}
   projectileSpeed: 200
+  plumeSpawn: {fileID: 0}
   plumePrefab: {fileID: 8298942274983861030, guid: c2bc05c032208c746905773ad816afed, type: 3}
   hero: {fileID: 503023742}
 --- !u!114 &354525438
@@ -1535,6 +1537,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865953922}
   m_CullTransparentMesh: 1
+--- !u!1 &882454819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882454820}
+  m_Layer: 0
+  m_Name: PlumeSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882454820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882454819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 354525435}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958277818
 GameObject:
   m_ObjectHideFlags: 0
