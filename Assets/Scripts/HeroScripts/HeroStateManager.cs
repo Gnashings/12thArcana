@@ -14,6 +14,7 @@ public class HeroStateManager : MonoBehaviour
     public GameObject dodgeLeftWaypoint;
     public GameObject dodgeRightWaypoint;
     public Animator anim;
+    public AudioSource throwSound;
     [HideInInspector]
     public HeroBaseState currentState;
     public bool isGrounded;

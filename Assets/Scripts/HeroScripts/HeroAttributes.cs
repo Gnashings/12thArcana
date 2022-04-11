@@ -11,7 +11,6 @@ public class HeroAttributes : MonoBehaviour
     public float jumpChance;
     public float jumpChanceMod;
     public float jumpHeight;
-
     private float timer;
     public bool isBlocking;
     void Start()
@@ -28,7 +27,6 @@ public class HeroAttributes : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        
         if(!isBlocking)
         {
             health -= damage;

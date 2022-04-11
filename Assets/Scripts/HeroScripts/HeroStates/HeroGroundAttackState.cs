@@ -31,6 +31,7 @@ public class HeroGroundAttackState : HeroBaseState
         doneAttacking = false;
         yield return new WaitForSeconds(0.5f);
         heroState.heroAttacks.FireProjectile();
+        heroState.throwSound.Play();
         yield return new WaitForSeconds(0.5f);
         doneAttacking = true;
     }
