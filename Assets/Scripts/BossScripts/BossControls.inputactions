@@ -53,7 +53,7 @@
                 {
                     "name": "",
                     "id": "5cd22605-2d57-4855-b0d1-db5ca80bcbf2",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "BossControls",
