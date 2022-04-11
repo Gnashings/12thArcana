@@ -87,6 +87,17 @@ public class @BossControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d5ac3176-1842-4434-9c74-ce9e66680ba4"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""BossControls"",
+                    ""action"": ""Plume"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""d75408f6-cf3b-4513-8beb-21d96e0396a9"",
                     ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
@@ -98,8 +109,30 @@ public class @BossControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6bf9dd84-9863-4c3b-a61a-17856cf9366e"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""BossControls"",
+                    ""action"": ""Homing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""90ee4f3c-ae37-419b-8d94-8b5d580cbf7d"",
                     ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""BossControls"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""347b9538-172e-4841-8781-271ee8ed5b75"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""BossControls"",
