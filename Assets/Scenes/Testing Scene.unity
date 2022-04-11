@@ -3916,7 +3916,7 @@ MonoBehaviour:
     - isHero: 1
       dialogue: Have at you!
     - isHero: 0
-      dialogue: END L1
+      dialogue: As if you ever had a chance.
   - totalConvos:
     - isHero: 0
       dialogue: "Wait. Didn\u2019t I already kill you?"
@@ -3927,7 +3927,7 @@ MonoBehaviour:
     - isHero: 1
       dialogue: Have at you!
     - isHero: 0
-      dialogue: END L2
+      dialogue: "Why don\u2019t you stay dead this time?"
   - totalConvos:
     - isHero: 0
       dialogue: What is this trickery? How many times must I kill you.
@@ -3938,7 +3938,7 @@ MonoBehaviour:
     - isHero: 1
       dialogue: Have at you!
     - isHero: 0
-      dialogue: END L3
+      dialogue: Even with your new tricks you are no match for me.
   - totalConvos:
     - isHero: 0
       dialogue: How is it that you keep returning. I have killed you thrice now and
@@ -3952,7 +3952,7 @@ MonoBehaviour:
     - isHero: 1
       dialogue: Have at you!
     - isHero: 0
-      dialogue: END L3
+      dialogue: Can you now leave me in peace?
   - totalConvos:
     - isHero: 0
       dialogue: "This cannot be real. Have I constructed a mental prison? No matter
@@ -3963,8 +3963,8 @@ MonoBehaviour:
       dialogue: No, I refuse. This cycle can be broken.
     - isHero: 1
       dialogue: Have at you!
-    - isHero: 0
-      dialogue: END L3
+    - isHero: 1
+      dialogue: I will win no matter how many times you return
   - totalConvos:
     - isHero: 0
       dialogue: Please. Must this continue for eternity? The cycle is endless.
@@ -3975,8 +3975,8 @@ MonoBehaviour:
         paying for my sins? Perhaps the only way out is death.
     - isHero: 1
       dialogue: Have at you!
-    - isHero: 0
-      dialogue: END L3
+    - isHero: 1
+      dialogue: Will this cycle ever end?
   allTextsOver: 0
 --- !u!4 &2094728653
 Transform:
