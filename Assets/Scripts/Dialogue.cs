@@ -42,8 +42,8 @@ public class Dialogue : MonoBehaviour
         thisLevel = LevelProgress.levelCount;
         if (levelDialogues.Count <= LevelProgress.levelCount)
         {
-            continueBtn.gameObject.SetActive(false);
-            ReturnPlayerControls();
+            thisLevel = 5;
+            CycleSpeeches();
         }
         else
             CycleSpeeches();

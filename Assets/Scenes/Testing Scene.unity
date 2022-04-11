@@ -653,8 +653,11 @@ MonoBehaviour:
   projectileSpawn: {fileID: 1047410299}
   projectilePrefab: {fileID: 3682210616602826789, guid: 27b6e06e5586dc244a6e53563443b1de, type: 3}
   projectileSpeed: 200
+  damageFB: 10
   plumeSpawn: {fileID: 882454819}
   plumePrefab: {fileID: 8298942274983861030, guid: c2bc05c032208c746905773ad816afed, type: 3}
+  damagePlume: 25
+  damageHoming: 20
   hero: {fileID: 503023742}
 --- !u!114 &354525438
 MonoBehaviour:
@@ -668,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1a42ec8ba90114f83ed5b4dcef5fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 100
+  totalHealth: 500
   health: 0
   painSound: {fileID: 354525440}
 --- !u!114 &354525439
@@ -1016,12 +1019,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855de3bfc907703409cdfeb5cab7b74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 1
+  totalHealth: 50
+  hpPerLevel: 5
   health: 0
   jumpChance: 1
   jumpChanceMod: 0.15
   jumpHeight: 400
-  throwSound: {fileID: 503023748}
   isBlocking: 0
 --- !u!54 &503023745
 Rigidbody:
@@ -1061,6 +1064,7 @@ MonoBehaviour:
   dodgeLeftWaypoint: {fileID: 958277818}
   dodgeRightWaypoint: {fileID: 1151999563}
   anim: {fileID: 1137286770}
+  throwSound: {fileID: 503023748}
   isGrounded: 0
 --- !u!114 &503023747
 MonoBehaviour:
@@ -1077,6 +1081,8 @@ MonoBehaviour:
   ProjectileSpawn: {fileID: 858864152}
   ProjectilePrefab: {fileID: 7560392311468258432, guid: 188b0f66c9625c542bc028677debac61, type: 3}
   projectileSpeed: 400
+  damage: 25
+  damagePerLevel: 15
 --- !u!82 &503023748
 AudioSource:
   m_ObjectHideFlags: 0

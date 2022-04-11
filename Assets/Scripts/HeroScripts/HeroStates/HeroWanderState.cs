@@ -31,6 +31,8 @@ public class HeroWanderState : HeroBaseState
         //reset temper
         temper = 0;
 
+        //set temper to become a little more random
+        temper = Random.Range(1, 10);
         heroState.StartCoroutine(Temper());
         heroState.anim.Play("walk_anim");
     }
@@ -65,7 +67,7 @@ public class HeroWanderState : HeroBaseState
         {
             heroState.StartCoroutine(Temper());
         }
-        else if (temper == 10f)
+        else if (temper >= 10f)
         {
             tickTemper = false;
             heroState.SwitchState(heroState.attackState);

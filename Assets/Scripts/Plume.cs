@@ -34,8 +34,8 @@ public class Plume : MonoBehaviour
         windUpHitbox.SetActive(false);
 
         damageHitbox.SetActive(true);
-        yield return new WaitForSeconds(activeTime);
         Instantiate(endFX, transform.position, transform.rotation);
+        yield return new WaitForSeconds(activeTime);
         damageHitbox.SetActive(false);
 
         Destroy(gameObject);
@@ -45,7 +45,7 @@ public class Plume : MonoBehaviour
     {
         if (other.CompareTag("HeroHurtbox"))
         {
-            other.GetComponentInParent<HeroAttributes>().TakeDamage(20);
+            other.GetComponentInParent<HeroAttributes>().TakeDamage(damage);
             Destroy(gameObject);
         }
         
@@ -53,7 +53,7 @@ public class Plume : MonoBehaviour
         {
             if (other.CompareTag("Boss"))
             {
-                other.GetComponentInParent<BossAttributes>().TakeDamage(20);
+                other.GetComponentInParent<BossAttributes>().TakeDamage(damage);
                 Destroy(gameObject);
             }
         }

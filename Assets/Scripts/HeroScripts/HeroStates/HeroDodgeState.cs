@@ -16,10 +16,12 @@ public class HeroDodgeState : HeroBaseState
     //float lowerBound;
     float dodgeBuffer;
     float speed;
+    float dodgeCancelChance;
+    float range;
     public override void EnterState(HeroStateManager heroState)
     {
-        heroState.DumpAuraMemory();
-        
+        heroState.DumpMemory();
+        heroState.aura.dodgeDecision = false;
 
         //set range bounds
         //upperBound = 3f;
@@ -32,11 +34,11 @@ public class HeroDodgeState : HeroBaseState
 
         //generate a random range to wander.
         dodgeBuffer = 0.15f;
-
         speed = 4f;
-        //Debug.Log("right WP Distance: " + Vector3.Distance(heroPosX, rightWP));
-        //Debug.Log("left WP Distance: " + Vector3.Distance(heroPosX, leftWP));
 
+        //dodgeCancelChance
+        dodgeCancelChance = heroState.stats.jumpChance * Random.Range(0.005f, 0.01f);
+        Debug.Log("CANCELCHANCE : " + dodgeCancelChance);
         if (Vector3.Distance(heroPosX, rightWP) > Vector3.Distance(heroPosX, leftWP))
         {
             dodgeRight = true;
@@ -45,11 +47,13 @@ public class HeroDodgeState : HeroBaseState
             dodgeRight = false;
 
         //Debug.Log("dodging right: " + dodgeRight);
+        
     }
 
     public override void ExitState(HeroStateManager heroState)
     {
         dodgeComplete = false;
+        heroState.DumpMemory();
         heroState.EnableAura();
         //Debug.Log("DODGE COMPLETE");
     }
@@ -57,9 +61,25 @@ public class HeroDodgeState : HeroBaseState
     public override void UpdateState(HeroStateManager heroState)
     {
         heroPosX = heroState.transform.position;
-
+        heroState.aura.dodgeDecision = false;
         if (dodgeComplete == false)
         {
+            if(heroState.aura.blockDecision)
+            {
+                if(Random.value <= dodgeCancelChance)
+                {
+                    Debug.Log("DodgeCancel");
+                    heroState.SwitchState(heroState.blockState);
+                }    
+            }
+            if (heroState.aura.jumpDecision)
+            {
+                if (Random.value <= dodgeCancelChance)
+                {
+                    Debug.Log("DodgeCancel" + Random.value);
+                    heroState.SwitchState(heroState.jumpState);
+                }
+            }
             if (dodgeRight)
             {
                 MoveRight(heroState);

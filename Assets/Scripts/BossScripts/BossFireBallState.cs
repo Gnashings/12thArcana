@@ -28,7 +28,7 @@ public class BossFireBallState : BossBaseState
     IEnumerator AttackCD()
     {
         finishedAttacking = false;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         finishedAttacking = true;
     }
 

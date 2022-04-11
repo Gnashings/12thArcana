@@ -72,6 +72,11 @@ public class HeroStateManager : MonoBehaviour
         aura.jumpDecision = false;
         aura.dodgeDecision = false;
     }
+    public void DumpMemory()
+    {
+        aura.jumpDecision = false;
+        aura.dodgeDecision = false;
+    }
 
     public void EnableAura()
     {

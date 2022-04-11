@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HeroAttributes : MonoBehaviour
 {
     public float totalHealth;
+    public float hpPerLevel;
     [HideInInspector]
     public float health;
     public float jumpChance;
@@ -17,7 +18,8 @@ public class HeroAttributes : MonoBehaviour
     {
         Debug.Log("Level : " + LevelProgress.levelCount);
         jumpChance += jumpChanceMod * LevelProgress.levelCount;
-        health = totalHealth;
+        health = totalHealth + (hpPerLevel * LevelProgress.levelCount);
+        Debug.Log("HP : " + health);
     }
 
     void FixedUpdate()

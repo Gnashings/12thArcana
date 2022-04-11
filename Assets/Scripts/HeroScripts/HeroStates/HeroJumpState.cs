@@ -11,7 +11,14 @@ public class HeroJumpState : HeroBaseState
         heroState.isGrounded = false;
         heroState.rBody.AddForce(heroState.transform.up * heroState.stats.jumpHeight);
         heroState.anim.Play("jump_anim");
-        heroState.heroAttacks.FireProjectile();
+        float jumpAttackChance = Random.Range(0.1f, heroState.stats.jumpChance);
+        Debug.Log(jumpAttackChance);
+        if(Random.value <= jumpAttackChance)
+        {
+            heroState.throwSound.Play();
+            heroState.heroAttacks.FireProjectile();
+        }
+        
         
     }
     

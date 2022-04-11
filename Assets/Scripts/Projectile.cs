@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public bool isHeroProjectile;
     public bool isHoming;
+    public float damage;
     private bool startHoming;
     public Rigidbody rb;
     private GameObject hero;
@@ -51,7 +52,7 @@ public class Projectile : MonoBehaviour
             }
             if (other.CompareTag("HeroHurtbox"))
             {
-                other.GetComponentInParent<HeroAttributes>().TakeDamage(20);
+                other.GetComponentInParent<HeroAttributes>().TakeDamage(damage);
                 Destroy(gameObject);
             }
         }
@@ -59,7 +60,7 @@ public class Projectile : MonoBehaviour
         {
             if (other.CompareTag("Boss"))
             {
-                other.GetComponentInParent<BossAttributes>().TakeDamage(20);
+                other.GetComponentInParent<BossAttributes>().TakeDamage(damage);
                 Destroy(gameObject);
             }
         }
