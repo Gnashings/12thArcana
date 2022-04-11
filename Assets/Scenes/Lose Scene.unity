@@ -398,8 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d1587772bcb3048b9963a0b4c82d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 0}
-  levelsPlayed: {fileID: 0}
+  timeText: {fileID: 1658772795}
+  levelsPlayed: {fileID: 1922642257}
 --- !u!1 &984433237
 GameObject:
   m_ObjectHideFlags: 0
