@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4890315780103279502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4890315780103279496}
+  - component: {fileID: 4890315780103279499}
+  - component: {fileID: 4890315780103279497}
+  m_Layer: 0
+  m_Name: Director 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4890315780103279496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890315780103279502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4890315780103279499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890315780103279502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4a5900cbf5a734d80d2c2d954b9ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 0}
+  boss: {fileID: 0}
+  dialogue: {fileID: 4890315780103279497}
+--- !u!114 &4890315780103279497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890315780103279502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51dca728c607794985f5410f784e2e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 0}
+  continueBtn: {fileID: 0}
+  gameUI: {fileID: 0}
+  textSpeed: 0.01
+  levelDialogues:
+  - totalConvos:
+    - isHero: 0
+      dialogue: Hmm? Who are you?
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: Hah! As if an insignificant insect would ever have the chance to
+        defeat me!
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L1
+  - totalConvos:
+    - isHero: 0
+      dialogue: "Wait. Didn\u2019t I already kill you?"
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: Hmm. No matter, I have disposed of you once. I can do it again.
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L2
+  - totalConvos:
+    - isHero: 0
+      dialogue: What is this trickery? How many times must I kill you.
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: This is starting to irritate me.
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L3
+  - totalConvos:
+    - isHero: 0
+      dialogue: How is it that you keep returning. I have killed you thrice now and
+        yet here you stand before me. Is this sorcery, a trick of the mind, or divine
+        intervention?
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: You say that every time. Do you not see the futility? Even with such
+        miraculous immortality you cannot defeat me.
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L3
+  - totalConvos:
+    - isHero: 0
+      dialogue: "This cannot be real. Have I constructed a mental prison? No matter
+        how many times you die you always return. It is as if it is a cycle of destiny\u2026"
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: No, I refuse. This cycle can be broken.
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L3
+  - totalConvos:
+    - isHero: 0
+      dialogue: Please. Must this continue for eternity? The cycle is endless.
+    - isHero: 1
+      dialogue: Your reign of terror ends here monster!
+    - isHero: 0
+      dialogue: Is this some form of purgatory? Have I already died and now I am
+        paying for my sins? Perhaps the only way out is death.
+    - isHero: 1
+      dialogue: Have at you!
+    - isHero: 0
+      dialogue: END L3
+  allTextsOver: 0
