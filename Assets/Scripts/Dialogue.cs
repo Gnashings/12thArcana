@@ -107,7 +107,14 @@ public class Dialogue : MonoBehaviour
 
     void ProcFinalDialogue()
     {
+        if (levelDialogues[thisLevel].totalConvos[totalSpeeches].isHero == true)
+        {
+            gameUI.HeroTalking();
+        }
+        else
+            gameUI.BossTalking();
         StartCoroutine(TypeLine(levelDialogues[thisLevel].totalConvos[totalSpeeches].dialogue));
+
         allTextFinished = true;
     }
 

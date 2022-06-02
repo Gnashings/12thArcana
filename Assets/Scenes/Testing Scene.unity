@@ -3963,7 +3963,7 @@ MonoBehaviour:
       dialogue: No, I refuse. This cycle can be broken.
     - isHero: 1
       dialogue: Have at you!
-    - isHero: 1
+    - isHero: 0
       dialogue: I will win no matter how many times you return
   - totalConvos:
     - isHero: 0
@@ -3975,7 +3975,7 @@ MonoBehaviour:
         paying for my sins? Perhaps the only way out is death.
     - isHero: 1
       dialogue: Have at you!
-    - isHero: 1
+    - isHero: 0
       dialogue: Will this cycle ever end?
   allTextsOver: 0
 --- !u!4 &2094728653
